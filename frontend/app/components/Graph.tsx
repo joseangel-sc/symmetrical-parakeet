@@ -22,7 +22,7 @@ function Graph() {
         fetchTrees();
     };
 
-    const renderTree = (tree: TreeNode, index: number) => (
+    const renderTree = (tree: TreeNode) => (
         // <td key={index} style={{ border: '1px solid black', margin: '10px', padding: '10px', height:"auto"}}>
         <Tree data={tree} orientation="horizontal" translate={
             {x: 100, y: 50}
@@ -46,12 +46,9 @@ function Graph() {
             </form>
             <table style={{width: '100%', borderCollapse: 'collapse'}}>
                 <tbody>
-                {/*<tr>*/}
-                {/*  {trees.map(renderTree)}*/}
-                {/*</tr>*/}
                 {trees.map((tree, index) => (
                     <tr key={index} style={{border: '1px solid black', margin: '10px', padding: '10px'}}>
-                        {renderTree(tree, index)}
+                        {renderTree(tree)}
                     </tr>
                 ))
                 }
